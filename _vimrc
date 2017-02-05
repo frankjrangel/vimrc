@@ -19,7 +19,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'frankjrangel/conque-shell'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
-Plugin 'wincent/command-t'
+Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'wincent/command-t'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 " colors
@@ -44,9 +45,14 @@ syntax on
 
 colorscheme gruvbox
 
-:set guioptions-=m  "remove menu bar
-:set guioptions-=T  "remove toolbar
-:set number
-:set backspace=2
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set number
+set backspace=2
+set tabstop=4 shiftwidth=4
 
-:imap <C-BS> <C-W>
+imap <C-BS> <C-W>
+
+map <silent> <C-t> :NERDTreeToggle<CR>
+
+set tags=./tags;/
