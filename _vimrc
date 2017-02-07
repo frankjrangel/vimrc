@@ -20,8 +20,15 @@ Plugin 'frankjrangel/conque-shell'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'wincent/command-t'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+
+" Snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+" Autocomplete engine
+Plugin 'valloric/youcompleteme'
 
 " colors
 Plugin 'morhetz/gruvbox'
@@ -43,16 +50,31 @@ filetype plugin indent on    " required
 "
 syntax on
 
+" colors
 colorscheme gruvbox
 
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set number
-set backspace=2
-set tabstop=4 shiftwidth=4
+" vim behaviour
+let mapleader=" "
+set guioptions-=m				"remove menu bar
+set guioptions-=T				"remove toolbar
+set number						"display line numbers
+set backspace=2					"make backspace behave as expected
+imap <C-BS> <C-W> 
+set tabstop=4 shiftwidth=4		"indentation with tabs TODO configure by file type
+autocmd BufEnter * lcd %:p:h	"set working directory to file's directory
 
-imap <C-BS> <C-W>
+" Tags file
+set tags=./tags;/
 
+" NerdTree config 
 map <silent> <C-t> :NERDTreeToggle<CR>
 
-set tags=./tags;/
+" Ctrlp config
+let g:ctrlp_custom_ignore = 'node_modules'
+
+" ultisnips config
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+
