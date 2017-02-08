@@ -52,6 +52,10 @@ syntax on
 
 " colors
 colorscheme gruvbox
+" font
+if has('gui_running')
+  set guifont=Fantasque_Sans_Mono:h10:cANSI:qDRAFT
+endif
 
 " vim behaviour
 let mapleader=" "
