@@ -3,10 +3,13 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/vimfiles/bundle/Vundle.vim/
-call vundle#begin('%USERPROFILE%/vimfiles/bundle/')
+" set rtp+=~/vimfiles/bundle/Vundle.vim/
+" call vundle#begin('%USERPROFILE%/vimfiles/bundle/')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -22,6 +25,7 @@ Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
@@ -52,6 +56,11 @@ syntax on
 
 " colors
 colorscheme gruvbox
+set background=dark
+hi IndentGuidesOdd  guifg=#878787 ctermbg=237
+hi IndentGuidesEven guifg=#808080 ctermbg=236
+let g:indent_guides_color_change_percent = 50
+
 " font
 if has('gui_running')
   set guifont=Fantasque_Sans_Mono:h10:cANSI:qDRAFT
